@@ -1,84 +1,83 @@
 ---
 import { projects } from "../data/projects";
 import { useTranslations } from "../i18n/utils";
+import { Github, ExternalLink } from "lucide-astro";
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section class="max-w-5xl mx-auto mb-16" aria-labelledby="projects-heading">
+<section class="max-w-5xl mx-auto mb-8" aria-labelledby="projects-heading">
   <h3
-    id="projects-heading"
-    class="mt-12 mb-6 text-2xl font-bold text-primary tracking-tight"
+    id="projects-heading-alt"
+    class="mt-12 text-2xl font-black text-primary tracking-wider relative inline-block"
   >
     {t("projects.title")}
+
+    <div class="absolute -bottom-2 left-0 right-0 h-3 bg-green-400 -rotate-1">
+    </div>
+    <div
+      class="absolute -bottom-3 left-2 right-4 h-2 bg-green-400 rotate-1 opacity-60"
+    >
+    </div>
   </h3>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-    {
-      projects.map((project) => (
-        <article class="group flex flex-col justify-between rounded-xl border border-white/20 p-6 bg-white/5 shadow-lg transform translate-y-0 hover:-translate-y-1 transition-transform duration-200 ease-out">
-          <div>
-            <header class="flex justify-between items-start gap-3 mb-4">
-              <h4 class="text-lg font-semibold text-foreground leading-tight flex-1">
-                {t(project.titleKey)}
-              </h4>
-
-              {(project.projectUrl || project.githubUrl) && (
-                <div class="flex gap-2 items-center flex-shrink-0">
-                  {project.projectUrl && (
-                    <a
-                      href={project.projectUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="p-1.5 rounded-lg opacity-70 hover:opacity-100 transition-opacity duration-150"
-                      aria-label={`Visit ${t(project.titleKey)}`}
-                    >
-                      <img
-                        src="/icons/external-link.svg"
-                        alt=""
-                        class="w-5 h-5"
-                        aria-hidden="true"
-                      />
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="p-1.5 rounded-lg opacity-70 hover:opacity-100 transition-opacity duration-150"
-                      aria-label={`GitHub ${t(project.titleKey)}`}
-                    >
-                      <img
-                        src="/icons/github.svg"
-                        alt=""
-                        class="w-5 h-5"
-                        aria-hidden="true"
-                      />
-                    </a>
-                  )}
-                </div>
-              )}
-            </header>
-
-            <p class="text-foreground text-sm leading-relaxed mb-4">
-              {t(project.descriptionKey)}
-            </p>
-
-            <div class="flex flex-wrap gap-2 mt-auto" role="list">
-              {project.tags.map((tag) => (
-                <span
-                  class="inline-flex items-center bg-white/10 text-foreground border border-white/20 rounded-full px-3 py-1 text-xs font-medium"
-                  role="listitem"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </article>
-      ))
-    }
-  </div>
 </section>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+  {
+    projects.map((project) => (
+      <article class="group flex flex-col justify-between rounded-xl border border-muted p-6 transform translate-y-0 hover:-translate-y-1 transition-transform duration-200 ease-out">
+        <div>
+          <header class="flex justify-between items-start gap-3 mb-4">
+            <h4 class="text-lg font-semibold text-foreground leading-tight flex-1">
+              {t(project.titleKey)}
+            </h4>
+
+            {project.projectUrl || project.githubUrl ? (
+              <div class="flex gap-2 items-center flex-shrink-0">
+                {project.projectUrl ? (
+                  <a
+                    href={project.projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${t(project.titleKey)}`}
+                    class="p-1.5 rounded-lg text-foreground hover:text-accent transition-colors duration-150"
+                  >
+                    <ExternalLink class="w-5 h-5" />
+                  </a>
+                ) : null}
+
+                {project.githubUrl ? (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`GitHub ${t(project.titleKey)}`}
+                    class="p-1.5 rounded-lg text-foreground hover:text-accent transition-colors duration-150"
+                  >
+                    <Github class="w-5 h-5" />
+                  </a>
+                ) : null}
+              </div>
+            ) : null}
+          </header>
+
+          <p class="text-foreground text-sm leading-relaxed mb-4">
+            {t(project.descriptionKey)}
+          </p>
+
+          <div class="flex flex-wrap gap-2 mt-auto" role="list">
+            {project.tags.map((tag) => (
+              <span
+                class="inline-flex items-center text-foreground border border-muted rounded-full px-3 py-1 text-xs font-medium"
+                role="listitem"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

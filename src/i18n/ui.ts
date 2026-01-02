@@ -14,9 +14,9 @@ export const ui = {
     "profile.span": "Hola",
     "profile.span.text": " Me llamo",
     "profile.span.text1": "Soy",
-    "profile.role": "Desarrollador Frontend",
+    "profile.role": "Desarrollador creativo",
     "profile.description":
-      "Me gusta convertir la curiosidad en código, sobre todo cuando se trata de algoritmos inteligentes, software limpio e interfaces fáciles de usar.",
+      "Me interesa construir herramientas con datos claras y funcionales, cuidando tanto su diseño como la lógica que las sostiene.",
     "profile.cta": "Envíame un correo",
     "profile.cta.aria": "Enviar un correo a arcibyte@gmail.com",
 
@@ -37,19 +37,13 @@ export const ui = {
 
     //Sobre mí
     "aboutme.title": "Sobre mí",
-    "aboutme.highlight": "¡Aquí brillo!",
-    "aboutme.subtitle": "Creativo, curioso y movido por la lógica",
     "aboutme.paragraph.1":
-      "Actualmente estudio ingeniería en ciencia de datos con un enfoque en IA, estructuras algebraicas y desarrollo de software. Me gusta crear interfaces, explorar el",
+      "Estudio Ingeniería en Ciencia de Datos y paso gran parte de mi tiempo entre datos, código e ideas. Me gusta crear interfaces y entender el",
     "aboutme.why": "porqué",
     "aboutme.paragraph.2":
-      "detrás de los algoritmos, y construir cosas que se sientan bien de usar.",
+      "detrás de los algoritmos, pero también cuidar que lo que construyo sea claro y fácil de usar. Me interesa trabajar como ingeniero de datos en el futuro, aunque el desarrollo de software siempre ha sido algo personal para mí, y este espacio es una forma de expresarlo.",
     "aboutme.paragraph.3":
-      "Cuando no estoy inmerso en el código o un libro, me encontrarás montando bicicleta, caminando por la montaña, componiendo un poco de música o disfrutando de la no ficción o escribiendo.",
-
-    //blog
-    "title.blog": "Publicaciones de blog",
-    "subtitle.blog": "pensamientos, notas e ideas",
+      "Cuando me desconecto del computador, me voy a montar bicicleta leer o simplemente descansar. Desde niño me ha llamado la atención la música electrónica y quiero volver a explorarla componiendo de nuevo. También me gusta la filosofía y los libros de no ficción."
   },
   en: {
     // Navigation
@@ -59,9 +53,9 @@ export const ui = {
     "profile.span": "Hello",
     "profile.span.text": "My name is",
     "profile.span.text1": "I'm",
-    "profile.role": "Frontend Developer",
+    "profile.role": "Creative Developer",
     "profile.description":
-      "I love turning curiosity into code, especially when it comes to smart algorithms, clean software and easy-to-use interfaces.",
+      "I am interested in building tools with clear and functional data, paying close attention to both their design and the logic behind them.",
     "profile.cta": "Send me an email",
     "profile.cta.aria": "Send an email to arcibyte@gmail.com",
 
@@ -80,16 +74,15 @@ export const ui = {
     "projects.project4.description": "Short description.",
 
     //About Me
-    "aboutme.title": "About Me",
-    "aboutme.highlight": "Here I shine!",
-    "aboutme.subtitle": "Creative, curious, and driven by logic",
+
+    "aboutme.title": "About me",
     "aboutme.paragraph.1":
-      "Currently studying data science engineering with an eye on AI, algebraic structures, and software development. I enjoy creating interfaces, exploring the",
+      "I study Data Science Engineering and spend a lot of my time between data, code, and ideas. I enjoy creating interfaces and understanding the",
     "aboutme.why": "why",
     "aboutme.paragraph.2":
-      "behind algorithms, and building things that feel good to use.",
+      "behind algorithms, while also making sure what I build is clear and easy to use. In the future, I’d like to work as a data engineer, although software development has always been something personal for me, and this space is a way to express that.",
     "aboutme.paragraph.3":
-      "When I'm not deep into code or a textbook, you'll find me biking or hiking, composing a bit of music, or vibing with some nonfiction or writing.",
+      "When I step away from the computer, I usually go for a bike ride, read, or simply rest. Since I was a kid, I’ve been drawn to electronic music and I want to explore it again by composing. I also enjoy philosophy and reading non-fiction.",
 
     //blog
     "title.blog": "Blog posts",

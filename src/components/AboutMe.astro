@@ -4,14 +4,22 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section class="relative py-3 text-foreground overflow-hidden">
+<section class="relative mt-12 text-foreground overflow-hidden">
   <div class="max-w-5xl mx-auto flex flex-col space-y-2 mb-6">
-    <h2 class="text-xl font-bold text-primary relative inline-block">
-      {t("aboutme.title")}
+    <h2 class="text-2xl font-black text-primary tracking-wider pb-3">
+      <span class="relative inline-block">
+        {t("aboutme.title")}
+        <span
+          class="absolute -bottom-2 left-0 right-0 h-3 bg-green-400 -rotate-1"
+        ></span>
+        <span
+          class="absolute -bottom-3 left-1 right-2 h-2 bg-green-400 rotate-1 opacity-60"
+        ></span>
+      </span>
     </h2>
     <p class="text-secondary max-w-2xl leading-relaxed relative">
       {t("aboutme.paragraph.1")}
-      <span class="text-accent relative inline-block mx-1">
+      <span class="color-green-400 relative inline-block mx-1">
         <svg
           class="absolute -left-4 -top-2 w-4 h-4 text-accent"
           viewBox="0 0 24 24"

@@ -4,12 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "oklch(14.7% 0.004 49.25)",
-        primary: "oklch(86.9% 0.005 56.366)",
-        foreground: "oklch(86.9% 0.005 56.366)",
-        accent: "oklch(87.9% 0.169 91.605)",
-        muted: "oklch(21.6% 0.006 56.043)",
-      },
+        background: "oklch(97% 0.001 106.424)",
+        primary: "oklch(26.8% 0.007 34.298)", //texto principal, encabezados
+        foreground: "oklch(44.4% 0.011 73.639)", //texto secuandario, UI suave
+        accent: "oklch(79.2% 0.209 151.711)", //enfasis visual
+        muted: "oklch(86.9% 0.005 56.366)", // bordes
+      }, 
+
     },
   },
   plugins: [require("@tailwindcss/typography")],

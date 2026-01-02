@@ -25,7 +25,7 @@ const blogHref = localePath(currentLang, "/blog");
 ---
 
 <header
-  class="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-muted"
+  class="sticky top-0 z-50 bg-background border-b border-muted"
   aria-label="Main navigation"
 >
   <nav class="max-w-7xl mx-auto py-4 flex items-center justify-between">
@@ -37,7 +37,7 @@ const blogHref = localePath(currentLang, "/blog");
         class="w-8 h-8 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
       <span
-        class="font-semibold text-foreground transition-opacity duration-300 group-hover:opacity-60"
+        class="text-foreground transition-opacity duration-300 group-hover:opacity-60"
       >
         Arcibyte
       </span>
@@ -46,14 +46,14 @@ const blogHref = localePath(currentLang, "/blog");
     <div class="flex items-center gap-6 text-sm">
       <a
         href={blogHref}
-        class="font-medium text-foreground transition-opacity duration-300 hover:opacity-60"
+        class="font-medium text-foreground transition-opacity duration-300 hover:text-accent"
       >
         {translateUi("nav.blog")}
       </a>
 
       <a
         href={switchTo}
-        class="group relative px-4 py-1.5 text-xs font-medium text-foreground rounded-lg border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/5 transition-all duration-300 overflow-hidden"
+        class="group relative px-4 py-1.5 text-xs font-medium text-foreground rounded-lg border border-foreground/10 hover:border-accent hover:bg-foreground/5 transition-all duration-300 overflow-hidden"
         aria-label={`Switch to ${label}`}
       >
         <span
