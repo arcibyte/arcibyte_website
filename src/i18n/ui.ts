@@ -43,7 +43,11 @@ export const ui = {
     "aboutme.paragraph.2":
       "detrás de los algoritmos, pero también cuidar que lo que construyo sea claro y fácil de usar. Me interesa trabajar como ingeniero de datos en el futuro, aunque el desarrollo de software siempre ha sido algo personal para mí, y este espacio es una forma de expresarlo.",
     "aboutme.paragraph.3":
-      "Cuando me desconecto del computador, me voy a montar bicicleta leer o simplemente descansar. Desde niño me ha llamado la atención la música electrónica y quiero volver a explorarla componiendo de nuevo. También me gusta la filosofía y los libros de no ficción."
+      "Cuando me desconecto del computador, me voy a montar bicicleta leer o simplemente descansar. Desde niño me ha llamado la atención la música electrónica y quiero volver a explorarla componiendo de nuevo. También me gusta la filosofía y los libros de no ficción.",
+
+    //blog
+    "title.blog": "Artículos del blog",
+    "subtitle.blog": "Pensamientos, notas e ideas",
   },
   en: {
     // Navigation
