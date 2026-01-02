@@ -1,0 +1,80 @@
+---
+import { Github, Linkedin, Type } from "lucide-astro";
+---
+
+<section class="max-w-5xl mx-auto mt-6 mb-8" aria-labelledby="socials-heading">
+    <h3
+        id="socials-heading"
+        class="text-2xl font-black text-primary tracking-wider relative inline-block"
+    >
+        Socials
+        <div
+            class="absolute -bottom-2 left-0 right-0 h-3 bg-green-400 -rotate-1 -z-10"
+        >
+        </div>
+        <div
+            class="absolute -bottom-3 left-2 right-4 h-2 bg-green-400 rotate-1 opacity-60 -z-10"
+        >
+        </div>
+    </h3>
+
+    <div class="mt-8 flex flex-wrap gap-4 text-foreground">
+        <a
+            href="https://github.com/arcibyte"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-gray-200 hover:border-green-400 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(74,222,128,1)]"
+        >
+            <Github
+                class="w-6 h-6 group-hover:text-green-400 transition-colors"
+            />
+            <div class="flex flex-col">
+                <span
+                    class="font-bold group-hover:text-green-400 transition-colors"
+                    >GitHub</span
+                >
+                <span class="text-xs text-gray-500">@arcibyte</span>
+            </div>
+        </a>
+
+        <a
+            href="https://linkedin.com/in/arcibyte"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-gray-200 hover:border-green-400 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(74,222,128,1)]"
+        >
+            <Linkedin
+                class="w-6 h-6 group-hover:text-green-400 transition-colors"
+            />
+            <div class="flex flex-col">
+                <span
+                    class="font-bold group-hover:text-green-400 transition-colors"
+                    >LinkedIn</span
+                >
+                <span class="text-xs text-gray-500">@arcibyte</span>
+            </div>
+        </a>
+
+        <a
+            href="https://www.kaggle.com/arcibyte"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-gray-200 hover:border-green-400 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(74,222,128,1)]"
+        >
+            <div
+                class="w-6 h-6 flex items-center justify-center group-hover:text-green-400 transition-colors"
+            >
+                <span class="text-xl font-bold leading-none select-none">K</span
+                >
+            </div>
+
+            <div class="flex flex-col">
+                <span
+                    class="font-bold group-hover:text-green-400 transition-colors"
+                    >Kaggle</span
+                >
+                <span class="text-xs text-gray-500">@arcibyte</span>
+            </div>
+        </a>
+    </div>
+</section>

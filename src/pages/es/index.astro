@@ -3,14 +3,16 @@ import Layout from "../../layouts/Layout.astro";
 import Profile from "../../components/Home.astro";
 import Projects from "../../components/Projects.astro";
 import AboutMe from "../../components/AboutMe.astro";
+import Socials from "../../components/Socials.astro";
 
 import { initTranslations } from "../../i18n/translate";
 
-const { lang, t } = initTranslations(Astro.url);
+const { lang } = initTranslations(Astro.url);
 ---
 
 <Layout title="Jhon Arciniegas">
   <Profile lang={lang} />
   <Projects lang={lang} />
   <AboutMe lang={lang} />
+  <Socials lang={lang} />
 </Layout>
