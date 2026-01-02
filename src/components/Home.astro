@@ -7,62 +7,71 @@ const t = useTranslations(lang);
 ---
 
 <section
-  class="min-h-[30vh] flex items-center justify-center mt-8 bg-background text-foreground"
+  class="min-h-[30vh] flex items-center justify-center mt-8 text-primary py-6 relative overflow-hidden"
   aria-label="Profile introduction section"
 >
   <div
-    class="relative max-w-4xl w-full flex flex-col items-center sm:items-start gap-3 text-center sm:text-left"
+    class="absolute inset-0 -z-10 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"
   >
-    <div class="relative w-full">
+  </div>
+
+  <div
+    class="relative max-w-4xl w-full flex flex-col items-center sm:items-start gap-5 text-center sm:text-left z-10"
+  >
+    <div class="relative inline-block">
       <span
-        class="absolute left-0 text-accent text-sm rotate-2 font-semibold"
+        class="inline-block bg-yellow-200 text-foreground px-4 py-1.5 -rotate-2 font-bold text-sm rounded-sm"
         aria-hidden="true"
       >
         👋 {t("profile.span")}
       </span>
-
-      <span class="block mt-6 text-sm text-secondary">
-        {t("profile.span.text")}
-      </span>
     </div>
 
-    <h2 class="text-lg sm:text-xl text-primary font-semibold">
+    <span class="block text-sm text-foreground font-medium font-mono">
+      {t("profile.span.text")}
+    </span>
+
+    <h2
+      class="text-2xl sm:text-3xl font-black text-primary rotate-1 decoration-wavy underline decoration-2 decoration-blue-400 underline-offset-4"
+    >
       Jhon Arciniegas
     </h2>
 
-    <span class="text-sm text-secondary -mt-1">
+    <span class="text-sm text-foreground font-bold font-mono tracking-tight">
       {t("profile.span.text1")}
     </span>
 
-    <h3
-      class="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-text-glow"
-    >
-      {t("profile.role")}
-    </h3>
+    <div class="relative inline-block my-2">
+      <div
+        class="absolute inset-0 bg-green-300 -rotate-2 scale-105 rounded-sm -z-10"
+      >
+      </div>
+      <h3 class="relative text-4xl sm:text-5xl font-black text-primary px-2">
+        {t("profile.role")}
+      </h3>
+    </div>
 
-    <p class="text-secondary max-w-md leading-relaxed mt-2">
+    <p
+      class="text-foreground max-w-md leading-relaxed mt-2 text-lg font-medium"
+    >
       {t("profile.description")}
     </p>
 
     <button
       onclick="window.location.href='mailto:arcibyte@gmail.com'"
-      class="group relative mt-4 inline-flex items-center gap-2.5 text-foreground text-sm font-medium px-5 py-2.5 rounded-lg border border-foreground/10 hover:border-foreground/30 backdrop-blur-sm hover:bg-foreground/5 transition-all duration-300 overflow-hidden cursor-pointer"
+      class="group relative mt-8 inline-flex items-center gap-3 text-primary text-base font-black px-8 py-3 bg-blue-400 border-3 border-foreground hover:bg-green-300 transition-all duration-200 cursor-pointer -rotate-1 hover:rotate-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] rounded-sm"
       aria-label={t("profile.cta.aria")}
     >
-      <span
-        class="absolute inset-0 w-0 bg-foreground/5 transition-all duration-500 ease-out group-hover:w-full"
-      ></span>
-
       <Mail
-        class="relative z-10 w-4 h-4 group-hover:rotate-12 transition-transform duration-300"
-        strokeWidth={1.5}
+        class="w-5 h-5 group-hover:-rotate-12 transition-transform duration-200"
+        strokeWidth={2.5}
       />
 
-      <span class="relative z-10 tracking-wide">{t("profile.cta")}</span>
+      <span>{t("profile.cta")}</span>
 
       <ArrowRight
-        class="relative z-10 w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-300"
-        strokeWidth={2}
+        class="w-4 h-4 group-hover:translate-x-1 transition-all duration-200"
+        strokeWidth={2.5}
       />
     </button>
   </div>
