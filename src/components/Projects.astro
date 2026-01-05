@@ -1,83 +1,86 @@
 ---
 import { projects } from "../data/projects";
 import { useTranslations } from "../i18n/utils";
-import { Github, ExternalLink } from "lucide-astro";
+import { Github, ArrowUpRight, FolderOpen } from "lucide-astro";
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const projectList = projects || [];
 ---
 
-<section class="max-w-5xl mx-auto mb-8" aria-labelledby="projects-heading">
-  <h3
-    id="projects-heading-alt"
-    class="mt-12 text-2xl font-black text-primary tracking-wider relative inline-block"
-  >
-    {t("projects.title")}
-
-    <div class="absolute -bottom-2 left-0 right-0 h-3 bg-green-400 -rotate-1">
-    </div>
-    <div
-      class="absolute -bottom-3 left-2 right-4 h-2 bg-green-400 rotate-1 opacity-60"
+<section class="max-w-5xl mx-auto mb-14" aria-labelledby="projects-heading">
+  <div class="mb-10 relative z-10 inline-block">
+    <h3
+      id="projects-heading-alt"
+      class="mt-12 text-3xl font-black text-primary tracking-wider relative inline-block"
     >
-    </div>
-  </h3>
-</section>
+      {t("projects.title")}
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-  {
-    projects.map((project) => (
-      <article class="group flex flex-col justify-between rounded-xl border border-muted p-6 transform translate-y-0 hover:-translate-y-1 transition-transform duration-200 ease-out">
-        <div>
-          <header class="flex justify-between items-start gap-3 mb-4">
-            <h4 class="text-lg font-semibold text-foreground leading-tight flex-1">
-              {t(project.titleKey)}
-            </h4>
+      <div class="absolute -bottom-2 left-0 right-0 h-3 bg-accent -rotate-1">
+      </div>
+      <div
+        class="absolute -bottom-3 left-2 right-4 h-2 bg-accent rotate-1 opacity-60"
+      >
+      </div>
+    </h3>
+    <span
+      class="absolute bottom-1 left-0 w-full h-3 bg-accent/80 -z-10 -rotate-1"
+    ></span>
+  </div>
 
-            {project.projectUrl || project.githubUrl ? (
-              <div class="flex gap-2 items-center flex-shrink-0">
-                {project.projectUrl ? (
-                  <a
-                    href={project.projectUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Visit ${t(project.titleKey)}`}
-                    class="p-1.5 rounded-lg text-foreground hover:text-accent transition-colors duration-150"
-                  >
-                    <ExternalLink class="w-5 h-5" />
-                  </a>
-                ) : null}
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      projectList.map((project) => (
+        <article class="group relative flex flex-col justify-between rounded-2xl border-2 border-primary bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_oklch(var(--p))]">
+          <div>
+            <header class="flex justify-between items-start mb-4">
+              <div class="p-3 bg-primary/5 rounded-xl border border-primary/10 group-hover:bg-accent group-hover:border-primary group-hover:text-primary transition-colors">
+                <FolderOpen class="w-6 h-6 text-primary" stroke-width={2.5} />
+              </div>
 
-                {project.githubUrl ? (
+              <div class="flex gap-2">
+                {project.githubUrl && (
                   <a
                     href={project.githubUrl}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`GitHub ${t(project.titleKey)}`}
-                    class="p-1.5 rounded-lg text-foreground hover:text-accent transition-colors duration-150"
+                    aria-label="GitHub Code"
+                    class="p-2 rounded-lg border-2 border-transparent hover:border-primary hover:bg-accent transition-colors text-primary"
                   >
                     <Github class="w-5 h-5" />
                   </a>
-                ) : null}
+                )}
+                {project.projectUrl && (
+                  <a
+                    href={project.projectUrl}
+                    target="_blank"
+                    aria-label="Live Demo"
+                    class="p-2 rounded-lg border-2 border-transparent hover:border-primary hover:bg-accent transition-colors text-primary"
+                  >
+                    <ArrowUpRight class="w-5 h-5" />
+                  </a>
+                )}
               </div>
-            ) : null}
-          </header>
+            </header>
 
-          <p class="text-foreground text-sm leading-relaxed mb-4">
-            {t(project.descriptionKey)}
-          </p>
+            <h4 class="text-xl font-black text-primary mb-2 group-hover:underline decoration-wavy decoration-accent underline-offset-4">
+              {t(project.titleKey)}
+            </h4>
 
-          <div class="flex flex-wrap gap-2 mt-auto" role="list">
+            <p class="text-foreground text-sm leading-relaxed mb-6 font-medium">
+              {t(project.descriptionKey)}
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-2 mt-auto">
             {project.tags.map((tag) => (
-              <span
-                class="inline-flex items-center text-foreground border border-muted rounded-full px-3 py-1 text-xs font-medium"
-                role="listitem"
-              >
+              <span class="px-3 py-1 text-xs font-bold font-mono border border-primary rounded-full bg-background text-primary shadow-[2px_2px_0px_0px_oklch(var(--p)/0.2)]">
                 {tag}
               </span>
             ))}
           </div>
-        </div>
-      </article>
-    ))
-  }
-</div>
+        </article>
+      ))
+    }
+  </div>
+</section>

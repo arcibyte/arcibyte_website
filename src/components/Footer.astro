@@ -1,16 +1,33 @@
-<footer
-  class="border-t border-muted py-3 text-sm text-secondary tracking-tight"
->
+<footer class="mt-20 border-t-2 border-primary py-8 text-sm tracking-tight">
   <div
-    class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2"
+    class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6"
   >
-    <p class="text-foreground">
-      Open source · <span class="font-light">2026</span>
-    </p>
-    <p class="text-foreground">
-      Made with <span class="text-primary">Astro</span> + <span
-        class="text-accent">Tailwind</span
+    <div class="flex items-center gap-2">
+      <div class="h-2 w-2 rounded-full bg-accent border border-primary"></div>
+      <p class="font-bold text-primary">
+        Open source <span class="mx-2 text-muted">/</span>
+        <span class="font-mono text-foreground uppercase tracking-widest"
+          >2026</span
+        >
+      </p>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <p class="text-foreground font-medium">Built with</p>
+
+      <span
+        class="px-2 py-0.5 border-2 border-primary text-primary text-xs rounded-md shadow-[2px_2px_0px_0px_oklch(var(--p))]"
       >
-    </p>
+        ASTRO
+      </span>
+
+      <span class="text-primary font-bold">+</span>
+
+      <span
+        class="px-2 py-0.5 border-2 border-primary bg-accent font-black text-xs rounded-md shadow-[2px_2px_0px_0px_oklch(var(--p))]"
+      >
+        TAILWIND
+      </span>
+    </div>
   </div>
 </footer>

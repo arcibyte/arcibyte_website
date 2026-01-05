@@ -1,0 +1,42 @@
+---
+const { href, label, handle, color, icon: Icon } = Astro.props;
+---
+
+<a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group flex flex-col sm:flex-row sm:items-center justify-between p-6 hover:bg-accent/10 transition-colors relative overflow-hidden"
+>
+    <div class="flex items-center gap-6 z-10">
+        <div
+            class={`px-3 py-1 border-2 border-primary font-black text-xs uppercase -rotate-2 group-hover:rotate-0 transition-transform ${color} text-primary`}
+        >
+            {label}
+        </div>
+        <span
+            class="font-bold text-lg tracking-tighter group-hover:translate-x-2 transition-transform"
+        >
+            {handle}
+        </span>
+    </div>
+
+    <div class="flex items-center gap-4 mt-4 sm:mt-0 z-10">
+        <span
+            class="text-[10px] font-black opacity-0 group-hover:opacity-100 transition-opacity uppercase bg-primary text-background px-2 py-0.5"
+        >
+            Execute
+        </span>
+        <div
+            class="h-10 w-10 flex items-center justify-center border-2 border-primary group-hover:bg-primary group-hover:text-background transition-all"
+        >
+            {
+                Icon ? (
+                    <Icon class="h-5 w-5" />
+                ) : (
+                    <span class="text-xl font-black">K</span>
+                )
+            }
+        </div>
+    </div>
+</a>

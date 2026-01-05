@@ -25,41 +25,42 @@ const blogHref = localePath(currentLang, "/blog");
 ---
 
 <header
-  class="sticky top-0 z-50 bg-background border-b border-muted"
+  class="sticky top-0 z-50 bg-background border-b-2 border-primary"
   aria-label="Main navigation"
 >
-  <nav class="max-w-7xl mx-auto py-4 flex items-center justify-between">
+  <nav class="max-w-5xl mx-auto py-4 flex items-center justify-between">
     <a href={homeHref} class="group flex items-center gap-3">
-      <img
-        src="/img/profile.webp"
-        alt="Foto de perfil"
-        loading="lazy"
-        class="w-8 h-8 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
-      />
-      <span
-        class="text-foreground transition-opacity duration-300 group-hover:opacity-60"
-      >
+      <div class="relative">
+        <img
+          src="/img/profile.webp"
+          alt="Foto de perfil"
+          loading="lazy"
+          class="w-9 h-9 rounded-full object-cover border-2 border-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
+        />
+        <span
+          class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-accent border border-primary"
+        ></span>
+      </div>
+
+      <span class="text-lg font-black tracking-tight text-primary">
         Arcibyte
       </span>
     </a>
 
-    <div class="flex items-center gap-6 text-sm">
+    <div class="flex items-center gap-4 sm:gap-6">
       <a
         href={blogHref}
-        class="font-medium text-foreground transition-opacity duration-300 hover:text-accent"
+        class="font-bold text-primary hover:underline decoration-wavy decoration-2 decoration-accent underline-offset-4 transition-all"
       >
         {translateUi("nav.blog")}
       </a>
 
       <a
         href={switchTo}
-        class="group relative px-4 py-1.5 text-xs font-medium text-foreground rounded-lg border border-foreground/10 hover:border-accent hover:bg-foreground/5 transition-all duration-300 overflow-hidden"
+        class="relative px-3 py-1.5 text-xs font-black font-mono text-primary bg-background rounded-md border-2 border-primary shadow-[3px_3px_0px_0px_oklch(var(--p))] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:bg-accent"
         aria-label={`Switch to ${label}`}
       >
-        <span
-          class="absolute inset-0 w-0 bg-foreground/5 transition-all duration-500 ease-out group-hover:w-full"
-        ></span>
-        <span class="relative z-10">{label}</span>
+        {label}
       </a>
     </div>
   </nav>

@@ -45,6 +45,9 @@ export const ui = {
     "aboutme.paragraph.3":
       "Cuando me desconecto del computador, me voy a montar bicicleta leer o simplemente descansar. Desde niño me ha llamado la atención la música electrónica y quiero volver a explorarla componiendo de nuevo. También me gusta la filosofía y los libros de no ficción.",
 
+    //Contacto
+    "tile.contact": "Directorio Social",
+
     //blog
     "title.blog": "Artículos del blog",
     "subtitle.blog": "Pensamientos, notas e ideas",
@@ -78,7 +81,6 @@ export const ui = {
     "projects.project4.description": "Short description.",
 
     //About Me
-
     "aboutme.title": "About me",
     "aboutme.paragraph.1":
       "I study Data Science Engineering and spend a lot of my time between data, code, and ideas. I enjoy creating interfaces and understanding the",
@@ -87,6 +89,9 @@ export const ui = {
       "behind algorithms, while also making sure what I build is clear and easy to use. In the future, I’d like to work as a data engineer, although software development has always been something personal for me, and this space is a way to express that.",
     "aboutme.paragraph.3":
       "When I step away from the computer, I usually go for a bike ride, read, or simply rest. Since I was a kid, I’ve been drawn to electronic music and I want to explore it again by composing. I also enjoy philosophy and reading non-fiction.",
+
+    //Contacto
+    "tile.contact": "Social Directory",
 
     //blog
     "title.blog": "Blog posts",
