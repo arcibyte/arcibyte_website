@@ -1,49 +1,33 @@
 ---
 import { useTranslations } from "../i18n/utils";
+
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section class="relative mt-12 text-foreground overflow-hidden">
-  <div class="max-w-5xl mx-auto flex flex-col space-y-2 mb-6">
-    <h2 class="text-2xl font-black text-primary tracking-wider pb-3">
+<section class="relative mt-12 overflow-hidden text-foreground">
+  <div class="mx-auto mb-6 flex max-w-5xl flex-col space-y-2">
+    <h2 class="pb-3 text-2xl font-black tracking-wider text-primary">
       <span class="relative inline-block">
         {t("aboutme.title")}
         <span
-          class="absolute -bottom-2 left-0 right-0 h-3 bg-green-400 -rotate-1"
-        ></span>
+          class="absolute -bottom-2 left-0 right-0 -rotate-1 bg-green-400 h-3"
+          aria-hidden="true"></span>
         <span
-          class="absolute -bottom-3 left-1 right-2 h-2 bg-green-400 rotate-1 opacity-60"
-        ></span>
+          class="absolute -bottom-3 left-1 right-2 rotate-1 bg-green-400 opacity-60 h-2"
+          aria-hidden="true"></span>
       </span>
     </h2>
-    <p class="text-secondary max-w-2xl leading-relaxed relative">
-      {t("aboutme.paragraph.1")}
-      <span class="color-green-400 relative inline-block mx-1">
-        <svg
-          class="absolute -left-4 -top-2 w-4 h-4 text-accent"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
-          <path
-            d="M9 17H7c-1.1 0-2-.9-2-2V7h4v10zM19 17h-2c-1.1 0-2-.9-2-2V7h4v10z"
-          ></path>
-        </svg>
-        {t("aboutme.why")}
-        <svg
-          class="absolute -right-4 -bottom-2 w-4 h-4 text-accent"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
-          <path d="M15 7h4v8c0 1.1-.9 2-2 2h-2V7zM5 7h4v8c0 1.1-.9 2-2 2H5V7z"
-          ></path>
-        </svg>
-      </span>
-      {t("aboutme.paragraph.2")}
-    </p>
 
-    <p class="mt-4 text-secondary max-w-2xl leading-relaxed">
-      {t("aboutme.paragraph.3")}
-    </p>
+    <div class="max-w-2xl space-y-4">
+      <p class="leading-relaxed text-secondary">
+        {t("aboutme.paragraph.1")}
+        {t("aboutme.paragraph.2")}
+      </p>
+
+      <p class="leading-relaxed text-secondary">
+        {t("aboutme.paragraph.3")}
+      </p>
+    </div>
   </div>
 </section>
