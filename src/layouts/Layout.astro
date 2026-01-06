@@ -17,10 +17,13 @@ const currentLang = lang || Astro.currentLocale || "es";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="author" content="Jhon Arciniegas" />
+
+    <title>{title}</title>
+
     <link rel="icon" href="https://arcibyte.vercel.app/img/icon.png" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Jhon Arciniegas | Portfolio" />
+    <meta property="og:title" content={title} />
     <meta
       property="og:description"
       content="Applied data science, machine learning, and software engineering."
@@ -30,6 +33,7 @@ const currentLang = lang || Astro.currentLocale || "es";
       content="https://arcibyte.vercel.app/img/OP.jpg"
     />
     <meta property="og:url" content="https://www.arcibyte.vercel.app" />
+
     <link
       rel="preload"
       href="/fonts/inter-v20-latin-regular.woff2"
