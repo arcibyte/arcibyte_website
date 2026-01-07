@@ -39,20 +39,30 @@ const currentLang = lang || Astro.currentLocale || "es";
     <link rel="icon" href="/img/icon.png" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content="Jhon Arciniegas | Portfolio" />
     <meta
       property="og:description"
       content="Applied data science, machine learning, and software engineering."
     />
-    <meta property="og:image" content="/img/OP.jpg" />
-    <meta property="og:url" content="https://www.arcibyte.vercel.app" />
+    <meta property="og:image" content="https://arcibyte.is-a.dev/img/OP.jpg" />
+    <meta property="og:url" content="https://arcibyte.is-a.dev" />
+    <meta property="og:image:width" content="1620" />
+    <meta property="og:image:height" content="1080" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jhon Arciniegas | Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Applied data science, machine learning, and software engineering."
+    />
+    <meta name="twitter:image" content="https://arcibyte.is-a.dev/img/OP.jpg" />
   </head>
 
-  <body
-    class="bg-background text-text dark:bg-background-dark dark:text-white p-4 sm:p-0 mx-auto max-w-[580px] text-base"
-  >
+  <body class="bg-background p-4 sm:p-0 mx-auto max-w-[580px] text-base">
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
@@ -79,13 +89,14 @@ const currentLang = lang || Astro.currentLocale || "es";
     font-family: "Outfit", sans-serif;
     -webkit-font-smoothing: antialiased;
   }
+
   h1,
   h2,
   h3,
   h4,
   .nav-link,
   button {
-    font-family: "Space Grotesk";
+    font-family: "Space Grotesk", sans-serif !important;
     font-weight: 700;
     letter-spacing: -0.02em;
   }
@@ -93,5 +104,10 @@ const currentLang = lang || Astro.currentLocale || "es";
   h1 {
     font-size: 2.5rem;
     line-height: 1.1;
+  }
+
+  p {
+    font-family: "Outfit", sans-serif;
+    line-height: 1.6;
   }
 </style>
