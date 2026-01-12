@@ -1,96 +1,65 @@
 ---
-import { getEntry } from "astro:content";
-import { useTranslations } from "src/i18n/utils";
 import { Languages } from "lucide-astro";
+import { useTranslations } from "../i18n/utils";
+import {
+  getCurrentLocale,
+  getLocaleSwitchUrl,
+  getRelativeLocaleUrl,
+} from "../i18n/logicNav";
 
-const supportedLocales = ["en", "es"] as const;
-type Locale = (typeof supportedLocales)[number];
-const currentLang = supportedLocales.includes(Astro.currentLocale as Locale)
-  ? (Astro.currentLocale as Locale)
-  : "en";
-
-function getRelativeLocaleUrl(locale: string, path: string): string {
-  const cleanPath = path.replace(/^\/(en|es)(\/|$)/, "/").replace(/\/+$/, "");
-  const normalizedPath = cleanPath.startsWith("/")
-    ? cleanPath
-    : `/${cleanPath}`;
-
-  return `/${locale}${normalizedPath === "/" ? "" : normalizedPath}`;
-}
-
+const currentLang = getCurrentLocale(Astro.currentLocale);
 const translateUi = useTranslations(currentLang);
-const otherLang = currentLang === "en" ? "es" : "en";
-const label = otherLang.toUpperCase();
-
-const currentPathWithoutLang = Astro.url.pathname.replace(
-  /^\/(es|en)(\/|$)/,
-  "/",
+const { url: switchTo, label } = await getLocaleSwitchUrl(
+  currentLang,
+  Astro.url.pathname,
 );
-
-let switchTo = getRelativeLocaleUrl(otherLang, currentPathWithoutLang);
-
-if (currentPathWithoutLang.startsWith("/posts/")) {
-  const slug = currentPathWithoutLang.split("/").filter(Boolean).pop();
-  if (slug) {
-    const entry = await getEntry("posts", `${otherLang}/${slug}`);
-    if (!entry) {
-      switchTo = getRelativeLocaleUrl(otherLang, "blog");
-    }
-  }
-}
 
 const homeHref = getRelativeLocaleUrl(currentLang, "/");
 const blogHref = getRelativeLocaleUrl(currentLang, "/blog");
 ---
 
-<header class="sticky top-4 z-50 w-full" aria-label="Main navigation">
+<header class="sticky top-4 z-50 w-full px-4" aria-label="Main navigation">
   <nav
-    class="max-w-5xl mx-auto h-16 flex items-center justify-between px-4
-    bg-background border-[3px] border-primary
-    shadow-[4px_4px_0px_0px_#020402] rounded-xl transition-all duration-200"
+    class="max-w-3xl mx-auto h-14 flex items-center justify-between px-5
+    bg-background/80 backdrop-blur-md border border-muted
+    shadow-sm rounded-full"
   >
     <a
       href={homeHref}
-      class="group flex items-center gap-3 transition-transform active:scale-95"
+      class="group flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity"
     >
-      <div class="relative">
+      <div class="relative overflow-hidden rounded-full">
         <img
           src="/img/profile.webp"
           alt="Arcibyte profile"
           loading="lazy"
-          class="w-9 h-9 border-2 border-primary object-cover transition-all shadow-[2px_2px_0px_0px_#020402]"
+          class="w-8 h-8 object-cover transition-transform duration-300 group-hover:scale-110"
         />
       </div>
-      <span
-        class="text-lg tracking-tighter font-medium text-foreground leading-none"
-      >
+      <span class="text-sm font-semibold tracking-tight text-foreground">
         Arcibyte
       </span>
     </a>
 
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-2">
       <a
         href={blogHref}
-        class="text-base font-bold text-foreground tracking-tighter hover:underline"
+        class="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
       >
         {translateUi("nav.blog")}
       </a>
 
-      <div class="h-6 w-[2px] bg-foreground/20 hidden sm:block"></div>
+      <div class="h-4 w-[1px] bg-border hidden sm:block"></div>
 
       <a
         href={switchTo}
-        class="flex items-center gap-2 px-3 py-1.5 bg-background text-foreground border-2 border-foreground
-        shadow-[3px_3px_0px_0px_#020402]
-        hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]
-        transition-all duration-75 group active:scale-90"
+        class="flex items-center gap-1.5 px-3 py-1.5 rounded-full
+        text-foreground hover:text-primary hover:bg-muted/50
+        transition-all duration-200"
         aria-label={`Switch to ${label}`}
       >
-        <Languages class="w-4 h-4 stroke-[2.5px]" />
-        <span
-          class="text-xs font-black uppercase tracking-widest text-foreground"
-          >{label}</span
-        >
+        <Languages class="w-3.5 h-3.5" />
+        <span class="text-xs font-medium">{label}</span>
       </a>
     </div>
   </nav>

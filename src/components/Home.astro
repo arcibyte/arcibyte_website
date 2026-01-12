@@ -1,73 +1,75 @@
 ---
 import { useTranslations } from "../i18n/utils";
-import { Mail, ArrowRight } from "lucide-astro";
+import { Mail, ArrowRight, Github, Linkedin } from "lucide-astro";
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const socials = [
+  { icon: Github, href: "https://github.com/arcibyte", label: "Github" },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com/in/arcibyte",
+    label: "Linkedin",
+  },
+];
 ---
 
-<section
-  class="relative min-h-[60vh] flex items-center justify-center py-16 overflow-hidden bg-background"
->
-  <div class="max-w-5xl w-full mx-auto relative z-10 px-2">
-    <div class="flex flex-col gap-3">
-      <div class="flex items-center gap-4">
-        <h2
-          class="text-xl md:text-2xl font-bold text-primary italic decoration-4 underline decoration-accent underline-offset-4"
-        >
-          {t("profile.name")},
-        </h2>
-        <div class="inline-block animate-bounce-slow">
-          <img
-            src="/img/icon.png"
-            class="w-16 h-auto rotate-[-10deg] grayscale"
-            alt="Logo Arcibyte"
-          />
-        </div>
-      </div>
+<section class="relative min-h-[70vh] flex items-center py-24">
+  <div
+    class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-[120px] -z-10"
+  >
+  </div>
 
-      <div class="relative group w-fit">
-        <div
-          class="absolute inset-0 bg-accent translate-x-2 translate-y-2 md:translate-x-3 md:translate-y-3"
-        >
-        </div>
+  <div class="max-w-4xl mx-auto px-6 w-full">
+    <div class="flex flex-col gap-6">
+      <span class="text-primary">
+        {t("profile.name")}
+      </span>
 
-        <div
-          class="relative bg-primary px-2 py-3 md:px-3 md:py-3 border-4 border-foreground"
-        >
-          <h1
-            class="text-5xl md:text-7xl font-black text-background leading-none"
-          >
-            {t("profile.role")}
-          </h1>
-        </div>
-      </div>
+      <h1
+        class="text-2xl md:text-3xl font-bold tracking-tighter text-primary leading-[0.85]"
+      >
+        {t("profile.role")}
+      </h1>
 
-      <div class="max-w-2xl mt-4">
-        <p class="text-lg md:text-xl font-medium text-foreground leading-snug">
-          {t("profile.description")}
-        </p>
-      </div>
+      <p class="max-w-xl text-base text-foreground font-light leading-relaxed">
+        {t("profile.description")}
+      </p>
 
-      <div class="pt-6">
+      <div class="flex flex-wrap items-center gap-6 pt-6">
         <button
           onclick="window.location.href='mailto:arcibyte@gmail.com'"
-          class="group relative inline-flex items-center gap-3 bg-accent px-8 py-4
-         border-[3px] border-primary font-bold text-lg
-         shadow-[6px_6px_0px_0px_#020402]
-         transition-all duration-75
-         hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none"
+          class="group flex items-center gap-2 px-5 py-2.5 border border-foreground/10 bg-transparent text-foreground rounded-full transition-all duration-300 hover:border-foreground hover:bg-foreground/5 active:opacity-70"
         >
-          <Mail class="w-6 h-6 stroke-[2.5px]" />
+          <Mail class="w-4 h-4 opacity-70" />
 
-          <span class="tracking-tight">
-            {t ? t("profile.cta") : "Get in touch"}
+          <span class="text-sm font-medium tracking-tight">
+            {t("profile.cta")}
           </span>
 
           <ArrowRight
-            class="w-6 h-6 stroke-[2.5px] transition-transform duration-200 group-hover:translate-x-1"
+            class="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
           />
         </button>
+
+        <div class="hidden sm:block h-8 w-[1px]"></div>
+
+        <div class="flex items-center gap-4 text-foreground">
+          {
+            socials.map(({ icon: Icon, href, label }) => (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={label}
+                class="text-foreground hover:text-primary transition-colors duration-300"
+              >
+                <Icon class="w-5 h-5 stroke-[1.5px]" />
+              </a>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>

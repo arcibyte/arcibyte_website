@@ -68,6 +68,9 @@ const currentLang = lang || Astro.currentLocale || "es";
 </html>
 
 <style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
   @font-face {
     font-family: "Space Grotesk";
     src: url("/fonts/space-grotesk-v22-latin-700.woff2") format("woff2");
@@ -109,5 +112,14 @@ const currentLang = lang || Astro.currentLocale || "es";
   p {
     font-family: "Outfit", sans-serif;
     line-height: 1.6;
+  }
+  @layer base {
+    :root {
+      --background: oklch(97% 0 0);
+      --primary: oklch(21% 0.006 285.885);
+      --foreground: oklch(37% 0.013 285.805);
+      --border: oklch(55.6% 0 0);
+      --muted: oklch(92.2% 0 0);
+    }
   }
 </style>

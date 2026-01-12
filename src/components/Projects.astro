@@ -1,7 +1,7 @@
 ---
 import { projects } from "../data/projects";
 import { useTranslations } from "../i18n/utils";
-import { Github, ArrowUpRight, FolderOpen } from "lucide-astro";
+import { Github, ArrowUpRight } from "lucide-astro";
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
@@ -10,68 +10,64 @@ const projectList = projects || [];
 ---
 
 <section
-  class="max-w-5xl mx-auto mb-24 px-2"
+  class="max-w-4xl mx-auto mb-20 px-6"
   aria-labelledby="projects-heading"
 >
-  <div class="mb-8 mt-6 relative inline-block">
-    <h3
-      id="projects-heading"
-      class="text-3xl md:text-5xl font-black text-primary relative z-10 tracking-tighter"
-    >
+  <div>
+    <h3 id="projects-heading" class="text-xl font-semibold text-primary">
       {t("projects.title")}
     </h3>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="flex flex-col">
     {
       projectList.map((project) => (
-        <article class="group relative flex flex-col justify-between bg-background border-[3px] border-primary p-8 shadow-neo hover:shadow-none hover:translate-x-[6px] hover:translate-y-[6px] transition-all duration-200">
-          <div>
-            <header class="flex justify-between items-start mb-8">
-              <div class="p-3 border-2 border-foreground">
-                <FolderOpen class="w-6 h-6 text-foreground" stroke-width={3} />
+        <article class="group relative py-8 border-b border-muted flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all duration-300">
+          <div class="flex-1 space-y-1">
+            <div class="flex items-center gap-3">
+              <h3 class="text-lg font-medium text-primary transition-colors">
+                {t(project.titleKey)}
+              </h3>
+
+              <div class="hidden sm:flex gap-2">
+                {project.tags.slice(0, 2).map((tag) => (
+                  <span class="text-[10px] font-medium text-foreground/40 uppercase tracking-tight">
+                    {tag}
+                  </span>
+                ))}
               </div>
+            </div>
 
-              <div class="flex gap-3">
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    aria-label={t("projects.code")}
-                    class="p-2 bg-background border-2 border-foreground hover:bg-accent hover:text-foreground transition-colors shadow-[3px_3px_0px_0px_#001B2E] active:shadow-none"
-                  >
-                    <Github class="w-5 h-5" />
-                  </a>
-                )}
-                {project.projectUrl && (
-                  <a
-                    href={project.projectUrl}
-                    target="_blank"
-                    aria-label={t("projects.view")}
-                    class="p-2 bg-foreground text-background border-2 border-foreground hover:bg-accent hover:text-foreground transition-colors shadow-[3px_3px_0px_0px_#001B2E] active:shadow-none"
-                  >
-                    <ArrowUpRight class="w-5 h-5" />
-                  </a>
-                )}
-              </div>
-            </header>
-
-            <h4 class="text-2xl font-black text-primary mb-4 tracking-tight">
-              {t(project.titleKey)}
-            </h4>
-
-            <p class="text-foreground text-lg leading-snug mb-8 font-medium">
+            <p class="text-foreground text-[0.95rem] max-w-xl leading-snug">
               {t(project.descriptionKey)}
             </p>
           </div>
 
-          <div class="flex flex-wrap gap-2 mt-auto">
-            {project.tags.map((tag) => (
-              <span class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider border border-foreground/30 bg-accent/60 text-foreground">
-                {tag}
-              </span>
-            ))}
+          <div class="flex items-center gap-2">
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                class="p-2 text-foreground/50 hover:text-foreground transition-all duration-300"
+                title={t("projects.code")}
+              >
+                <Github class="w-[18px] h-[18px] stroke-[1.2px]" />
+              </a>
+            )}
+            {project.projectUrl && (
+              <a
+                href={project.projectUrl}
+                target="_blank"
+                class="flex items-center gap-1.5 px-3 py-1.5 text-foreground hover:text-primary transition-all duration-300 group/link"
+              >
+                <span class="text-sm font-medium">
+                  {t("projects.view") || "Ver"}
+                </span>
+                <ArrowUpRight class="w-3.5 h-3.5 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+              </a>
+            )}
           </div>
+          <div class="absolute bottom-[-0.5px] left-0 h-[1px] w-0 bg-primary/40 transition-all duration-500 group-hover:w-full" />
         </article>
       ))
     }
