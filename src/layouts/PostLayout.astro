@@ -4,31 +4,24 @@ const { title, lang } = Astro.props;
 ---
 
 <Layout title={title} lang={lang}>
-  <section
-    class="relative max-w-3xl mx-auto my-12 p-6 md:p-12 bg-background border-[3px] border-foreground shadow-neo"
-  >
-    <header class="mb-12">
-      <div class="relative inline-block">
-        <h1
-          class="relative z-10 text-3xl md:text-5xl font-black uppercase tracking-tighter text-foreground leading-none"
-        >
-          {title}
-        </h1>
-        <div class="absolute -bottom-2 left-0 w-full h-4 bg-primary/20 -z-10">
-        </div>
-      </div>
+  <section class="max-w-3xl mx-auto py-12 px-4 sm:px-6">
+    <header class="pb-10">
+      <h1
+        class="text-lg md:text-xl font-bold tracking-tight text-primary leading-tight text-center"
+      >
+        {title}
+      </h1>
     </header>
 
     <article
       class="prose prose-neutral max-w-none
-         prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter prose-headings:text-foreground
-         prose-p:text-foreground/90 prose-p:leading-relaxed prose-p:font-medium
-         prose-a:text-primary prose-a:font-black prose-a:no-underline prose-a:border-b-2 prose-a:border-primary/30 hover:prose-a:border-primary transition-colors
-         prose-strong:text-foreground prose-strong:font-black
-         prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-primary/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:font-bold prose-blockquote:italic
-         prose-code:bg-foreground prose-code:text-background prose-code:before:content-none prose-code:after:content-none
-         prose-code:font-bold prose-code:px-1.5 prose-code:py-0.5
-         prose-img:border-[3px] prose-img:border-foreground prose-img:shadow-neo prose-img:rounded-none"
+         prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-primary
+                  prose-p:text-foreground prose-p:leading-7 prose-p:text-[1.05rem]
+                  prose-a:text-primary prose-a:font-medium prose-a:no-underline hover:prose-a:text-primary/80 transition-colors
+                  prose-blockquote:border-l-2 prose-blockquote:border-primary/40 prose-blockquote:bg-muted/30 prose-blockquote:rounded-r-lg prose-blockquote:not-italic prose-blockquote:text-foreground/80
+                  prose-code:bg-muted prose-code:text-foreground prose-code:rounded-md prose-code:font-medium
+         prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none
+                  prose-img:rounded-2xl prose-img:shadow-sm"
     >
       <slot />
     </article>

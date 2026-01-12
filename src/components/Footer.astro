@@ -1,36 +1,34 @@
-<footer class="mt-16 border-t-[3px] border-primary bg-background py-4 text-sm">
+<footer class="mt-12 py-6 text-sm px-4">
   <div
-    class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8"
+    class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6"
   >
-    <div class="flex items-center gap-3">
-      <div
-        class="h-3 w-3 rounded-full bg-accent border-2 border-foreground opacity-80"
-      >
+    <div class="flex items-center gap-4 text-muted-foreground">
+      <div class="flex items-center gap-2">
+        <div class="h-1.5 w-1.5 rounded-full bg-primary/60 animate-pulse"></div>
+        <p class="font-medium tracking-tight">Open source</p>
       </div>
-      <p class="font-black text-foreground tracking-tighter italic text-base">
-        Open source <span class="mx-2 text-muted/40">//</span>
-        <span class="font-mono text-muted/60">{new Date().getFullYear()}</span>
+      <span class="text-border"></span>
+      <p class="text-[13px] opacity-70">
+        {new Date().getFullYear()}
       </p>
     </div>
 
-    <div class="flex items-center gap-2">
-      <p class="text-foreground font-semibold tracking-widest text-[12px] mr-2">
-        Built with:
+    <div class="flex items-center gap-4">
+      <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
+        Built with
       </p>
 
-      <div
-        class="flex items-center border-2 border-foreground bg-foreground overflow-hidden"
-      >
+      <div class="flex items-center gap-3">
         <span
-          class="px-2 py-0.5 bg-accent text-foreground font-black text-[10px] uppercase"
+          class="text-xs font-semibold text-foreground hover:text-primary transition-colors cursor-default"
         >
-          ASTRO
+          Astro
         </span>
-        <span class="px-1.5 text-background font-bold text-xs"> + </span>
+        <span class="text-border text-xs">+</span>
         <span
-          class="px-2 py-0.5 bg-warning text-accent font-black text-[10px] uppercase"
+          class="text-xs font-semibold text-foreground hover:text-primary transition-colors cursor-default"
         >
-          TAILWIND
+          Tailwind
         </span>
       </div>
     </div>

@@ -40,18 +40,16 @@ const pageTitle = t("blog.title");
 ---
 
 <Layout title={pageTitle} lang={currentLang}>
-    <section class="max-w-3xl mx-auto py-12 px-2">
-        <header class="mb-8">
-            <div class="relative inline-block">
-                <h1
-                    class="text-3xl md:text-4xl font-black text-primary tracking-tighter relative z-10"
-                >
-                    {t("blog.title")}
-                </h1>
-            </div>
+    <section class="max-w-3xl mx-auto py-12 px-6">
+        <header class="mb-10">
+            <h1
+                class="text-lg md:text-xl font-bold text-primary tracking-tight"
+            >
+                {t("blog.title")}
+            </h1>
             {
                 t("blog.subtitle") && (
-                    <p class="text-muted text-sm mt-2 font-medium uppercase tracking-tight">
+                    <p class="text-base mt-2 font-normal text-foreground">
                         {t("blog.subtitle")}
                     </p>
                 )
@@ -60,42 +58,36 @@ const pageTitle = t("blog.title");
 
         {
             posts.length === 0 ? (
-                <div class="bg-background border-2 border-primary p-6 text-center shadow-neo">
-                    <p class="font-black text-foreground text-xs tracking-widest">
-                        {t("blog.empty")}
-                    </p>
+                <div class="p-6 text-center border border-dashed border-primary/30 rounded-lg">
+                    <p class="text-muted text-sm">{t("blog.empty")}</p>
                 </div>
             ) : (
-                <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-4">
                     {posts.map((post) => (
                         <a href={post.url} class="group block">
-                            <article class="bg-background border-2 border-primary p-3 md:px-5 md:py-3 shadow-neo transition-all group-hover:shadow-none group-hover:translate-x-1 group-hover:translate-y-1">
+                            <article class="bg-background border p-5 rounded-xl transition-all hover:border-primary/50">
                                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
                                     <div class="flex flex-col gap-1">
                                         <time
                                             datetime={post.date.toISOString()}
-                                            class="text-[9px] font-black uppercase tracking-[0.2em] text-muted/60"
+                                            class="text-xs font-medium text-foreground"
                                         >
                                             {post.displayDate}
                                         </time>
-
-                                        <h2 class="text-lg md:text-xl font-black text-foreground tracking-tighter uppercase| leading-none group-hover:text-accent transition-colors">
+                                        <h2 class="text-lg  text-foreground tracking-tight group-hover:text-primary transition-colors">
                                             {post.title}
                                         </h2>
                                     </div>
 
-                                    <div class="flex items-center justify-between md:justify-end gap-4 mt-2 md:mt-0">
+                                    <div class="flex items-center gap-3 mt-2 md:mt-0">
                                         {post.tags.length > 0 && (
-                                            <span class="text-[9px] font-bold px-1.5 py-0.5 border border-foreground/10 bg-muted/5 text-muted uppercase">
+                                            <span class="text-xs font-medium px-2 py-1 rounded-md bg-primary/10 text-primary">
                                                 {post.tags[0]}
                                             </span>
                                         )}
 
-                                        <span class="text-[10px] font-black uppercase text-accent tracking-widest flex items-center gap-1 whitespace-nowrap">
-                                            {t("blog.read")}
-                                            <span class="group-hover:translate-x-1 transition-transform">
-                                                →
-                                            </span>
+                                        <span class="text-primary/50 group-hover:text-primary group-hover:translate-x-1 transition-all">
+                                            →
                                         </span>
                                     </div>
                                 </div>
