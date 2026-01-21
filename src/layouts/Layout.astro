@@ -17,16 +17,17 @@ const currentLang = lang ?? Astro.currentLocale ?? "es";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+
     <link
       rel="preload"
-      href="/fonts/space-grotesk-v22-latin-700.woff2"
+      href="/fonts/Geist-Medium.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="/fonts/outfit-v15-latin-regular.woff2"
+      href="/fonts/Geist-Bold.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -39,7 +40,7 @@ const currentLang = lang ?? Astro.currentLocale ?? "es";
     <link rel="icon" href="/img/icon.png" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={`${title} | Data Sotfware Developer`} />
+    <meta property="og:title" content={`${title} | Data Software Developer`} />
     <meta
       property="og:description"
       content="Applied data science, machine learning, and software engineering."
@@ -71,6 +72,7 @@ const currentLang = lang ?? Astro.currentLocale ?? "es";
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
   :root {
     --background: oklch(14.5% 0 0);
     --foreground: oklch(75% 0 0);
@@ -80,48 +82,58 @@ const currentLang = lang ?? Astro.currentLocale ?? "es";
     --muted: oklch(20.5% 0 0);
   }
   @font-face {
-    font-family: "Space Grotesk";
-    src: url("/fonts/space-grotesk-v22-latin-700.woff2") format("woff2");
-    font-weight: 700;
+    font-family: "Geist";
+    src: url("/fonts/Geist-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
     font-display: swap;
   }
   @font-face {
-    font-family: "Outfit";
-    src: url("/fonts/outfit-v15-latin-regular.woff2") format("woff2");
-    font-weight: 400;
+    font-family: "Geist";
+    src: url("/fonts/Geist-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
     font-display: swap;
   }
+
   html {
     background: var(--background);
     position: relative;
   }
 
   body {
-    font-family: "Outfit", sans-serif;
+    font-family: "Geist", sans-serif;
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
   }
 
   .layout-body {
     @apply p-4 sm:p-0 mx-auto max-w-[580px];
   }
+
+  .nav-link,
+  button,
+  strong,
+  b,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700; /* Esto ahora usará Geist-Bold.woff2 */
+    font-family: "Geist", sans-serif;
+  }
+
   .nav-link,
   button {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 700;
     letter-spacing: -0.02em;
   }
+
   h1 {
     font-size: 2.5rem;
     line-height: 1.1;
-    font-family: "Space Grotesk", sans-serif;
   }
-
-  h2,
-  h3,
-  h4 {
-    font-family: "Space Grotesk", sans-serif;
-  }
-
   html::before {
     content: "";
     position: absolute;
@@ -141,12 +153,14 @@ const currentLang = lang ?? Astro.currentLocale ?? "es";
     background-size: 1100px 400px;
     background-position: top center;
   }
+
   .nav-container {
     @apply max-w-3xl mx-auto h-14 flex items-center justify-between px-3
            rounded-full border border-transparent bg-transparent
            transition-all duration-500 transform-gpu isolate
            sticky top-4 z-50;
   }
+
   @keyframes stickynav {
     to {
       background-color: var(--background);

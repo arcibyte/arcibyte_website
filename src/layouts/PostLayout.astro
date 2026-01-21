@@ -7,21 +7,40 @@ const { title, lang } = Astro.props;
   <section class="max-w-3xl mx-auto py-12 px-4 sm:px-6">
     <header class="pb-10">
       <h1
-        class="text-lg md:text-xl font-bold tracking-tight text-primary leading-tight text-center"
+        class="text-xl md:text-2xl tracking-tight text-primary leading-tight text-center"
       >
         {title}
       </h1>
     </header>
 
     <article
-      class="prose prose-neutral max-w-none
-         prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-primary
-                  prose-p:text-foreground prose-p:leading-7 prose-p:text-[1.05rem]
-                  prose-a:text-primary prose-a:font-medium prose-a:no-underline hover:prose-a:text-primary/80 transition-colors
-                  prose-blockquote:border-l-2 prose-blockquote:border-primary/40 prose-blockquote:bg-muted/30 prose-blockquote:rounded-r-lg prose-blockquote:not-italic prose-blockquote:text-foreground/80
-                  prose-code:bg-muted prose-code:text-foreground prose-code:rounded-md prose-code:font-medium
+      class="prose prose-base prose-neutral max-w-none
+         prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-primary
+         prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+         prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
+         
+         prose-p:text-foreground prose-p:leading-relaxed
+         
+         prose-a:text-primary prose-a:font-medium prose-a:underline prose-a:decoration-primary
+         hover:prose-a:decoration-primary prose-a:transition-colors
+         
+         prose-ul:my-6 prose-li:text-foreground
+         
+         prose-blockquote:border-l-2 prose-blockquote:border-primary
+         prose-blockquote:bg-muted prose-blockquote:rounded-r-lg
+         prose-blockquote:not-italic prose-blockquote:text-foreground prose-blockquote:py-4 prose-blockquote:px-6
+         
+         prose-code:bg-muted prose-code:text-foreground prose-code:rounded-md prose-code:font-medium
          prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none
-                  prose-img:rounded-2xl prose-img:shadow-sm"
+         
+         prose-pre:bg-muted prose-pre:rounded-lg prose-pre:my-8
+         
+         prose-img:rounded-2xl prose-img:shadow-sm prose-img:my-10
+         
+         prose-figcaption:text-center prose-figcaption:text-sm
+         prose-figcaption:text-muted-foreground prose-figcaption:mt-3 prose-figcaption:italic
+         
+         prose-strong:text-primary prose-strong:font-semibold"
     >
       <slot />
     </article>

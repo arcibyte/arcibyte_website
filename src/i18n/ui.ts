@@ -3,7 +3,7 @@ export const languages = {
   es: "Español",
 };
 
-export const defaultLang = "es";
+export const defaultLang = "en";
 
 export const ui = {
   es: {
@@ -20,7 +20,7 @@ export const ui = {
     "profile.cta.aria": "Enviar un correo a arcibyte@gmail.com",
 
     // Proyectos (Generales)
-    "projects.title": "Proyectos Seleccionados",
+    "projects.title": "Proyectos",
     "projects.view": "Explorar",
     "projects.code": "GitHub",
     "projects.status.wip": "En desarrollo",
@@ -41,7 +41,7 @@ export const ui = {
 
     // Blog
     "blog.title": "Artículos del blog",
-    "blog.subtitle": "Pensamientos, notas e ideas sobre datos y código.",
+    "blog.subtitle": "Pensamientos, notas e ideas.",
     "blog.read": "Leer artículo",
     "blog.back": "Volver al blog",
     "blog.empty": "No se encontraron artículos.",
@@ -60,7 +60,7 @@ export const ui = {
     "profile.cta.aria": "Send an email to arcibyte@gmail.com",
 
     // Projects (General)
-    "projects.title": "Selected Projects",
+    "projects.title": "Projects",
     "projects.view": "Explore",
     "projects.code": "GitHub",
     "projects.status.wip": "In progress",
@@ -80,7 +80,7 @@ export const ui = {
 
     // Blog
     "blog.title": "Blog Posts",
-    "blog.subtitle": "Thoughts, notes, and ideas on data and code.",
+    "blog.subtitle": "Thoughts, notes, and ideas.",
     "blog.read": "Read post",
     "blog.back": "Back to blog",
     "blog.empty": "No posts found.",
