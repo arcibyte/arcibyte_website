@@ -11,7 +11,7 @@ tags: ["Arch Linux", "Experience", "Linux"]
 
 I've used a lot of Linux distributions over the years. Fedora was my daily driver for over 2 years, and it served me well. But I always felt like something was missing I wanted *more control* over my system. I'd heard about Arch for years, but honestly? It seemed intimidating, and I kept putting it off.
 
-![My Hyprland Setup](/img/blog/screen.png)
+![My Hyprland Setup](/img/blog/screen.webp)
 *My current desktop environment using Hyprland with my own customized dotfiles.*
 
 Then I stumbled upon the "rices" those gorgeous, highly customized Arch setups people share online. I was hooked. I *needed* to have my own. So I dove into the Arch Wiki, spent way too many hours testing in virtual machines, and finally took the plunge.
@@ -26,7 +26,7 @@ It's been over a year now. I've built my own [dotfiles](https://github.com/arcib
 
 **Note:** My dotfiles are in beta right now, but I plan to share the complete configuration once they're more stable.
 
-![Arch System Info](/img/blog/arch.png)
+![Arch System Info](/img/blog/arch.webp)
 *My Arch setup running smoothly—neofetch never gets old.*
 
 ### My Setup: The Pieces That Make It Work

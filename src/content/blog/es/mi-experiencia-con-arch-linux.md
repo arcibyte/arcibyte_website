@@ -11,7 +11,7 @@ tags: ["Arch Linux", "Experiencia", "Linux"]
 
 He usado muchas distribuciones de Linux a lo largo de los años. Fedora fue mi sistema principal por más de 2 años, y me sirvió bien. Pero siempre sentí que faltaba algo—quería *más control* sobre mi sistema. Había escuchado sobre Arch durante años, pero honestamente, parecía intimidante y seguía postergándolo.
 
-![Mi Configuración de Hyprland](/img/blog/screen.png)
+![Mi Configuración de Hyprland](/img/blog/screen.webp)
 *Mi entorno de escritorio actual usando Hyprland con mis propios dotfiles personalizados.*
 
 Entonces me topé con los "rices"—esas configuraciones de Arch magníficas y altamente personalizadas que la gente comparte en línea. Quedé enganchado. *Necesitaba* tener el mío propio. Así que me sumergí en la Arch Wiki, pasé demasiadas horas probando en máquinas virtuales y finalmente di el salto.
@@ -26,7 +26,7 @@ Ha pasado más de un año desde entonces. He construido mis propios [dotfiles](h
 
 **Nota:** Mis dotfiles están en fase beta por ahora, pero planeo compartir la configuración completa una vez que estén más estables.
 
-![Información del Sistema Arch](/img/blog/arch.png)
+![Información del Sistema Arch](/img/blog/arch.webp)
 *Mi configuración de Arch funcionando sin problemas—neofetch nunca envejece.*
 
 ### Mi Configuración: Las Piezas Que Lo Hacen Funcionar
