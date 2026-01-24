@@ -1,7 +1,7 @@
 ---
 import { projects } from "../data/projects";
 import { useTranslations } from "../i18n/utils";
-import { Github, ArrowUpRight } from "lucide-astro";
+import { ArrowUpRight } from "lucide-astro";
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
@@ -46,21 +46,9 @@ const projectList = projects || [];
               <a
                 href={project.githubUrl}
                 target="_blank"
-                class="p-2 text-foreground hover:text-primary transition-all duration-300"
-                title={t("projects.code")}
-              >
-                <Github class="w-[18px] h-[18px] stroke-[1.2px]" />
-              </a>
-            )}
-            {project.projectUrl && (
-              <a
-                href={project.projectUrl}
-                target="_blank"
                 class="flex items-center gap-1.5 px-3 py-1.5 text-foreground hover:text-primary transition-all duration-300 group/link"
               >
-                <span class="text-sm font-medium">
-                  {t("projects.view") || "Ver"}
-                </span>
+                <span class="text-sm font-medium">{t("projects.repo")}</span>
                 <ArrowUpRight class="w-3.5 h-3.5 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
               </a>
             )}

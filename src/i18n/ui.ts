@@ -21,9 +21,7 @@ export const ui = {
 
     // Proyectos (Generales)
     "projects.title": "Proyectos",
-    "projects.view": "Explorar",
-    "projects.code": "GitHub",
-    "projects.status.wip": "En desarrollo",
+    "projects.repo": "Repositorio",
 
     // --- Títulos y Descripciones de Proyectos ---
     "projects.project1.title": "Proyecto Uno",
@@ -61,9 +59,7 @@ export const ui = {
 
     // Projects (General)
     "projects.title": "Projects",
-    "projects.view": "Explore",
-    "projects.code": "GitHub",
-    "projects.status.wip": "In progress",
+    "projects.repo": "Repository",
 
     // --- Project Titles and Descriptions ---
     "projects.project1.title": "Project One",
